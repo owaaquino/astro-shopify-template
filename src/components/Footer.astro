@@ -1,5 +1,89 @@
+---
+const pages = [
+  { title: "Home", href: "/" },
+  { title: "Products", href: "/products" },
+  { title: "About", href: "/about" },
+  { title: "Contact", href: "/contact" },
+];
+
+const socials = [
+  { title: "Facebook", href: "#" },
+  { title: "Twitter", href: "#" },
+  { title: "Instagram", href: "#" },
+];
+
+const services = [
+  { title: "FAQs", href: "#" },
+  { title: "Shipping", href: "#" },
+  { title: "Returns", href: "#" },
+  { title: "Privacy Policy", href: "#" },
+];
+---
+
 <footer class="p-5 text-center text-sm text-gray-600">
-  Made with ❤️ by <a href="https://owaaquino.com" target="_blank" rel="noopener"
-    >Owa Aquino</a
-  >
+  <div class="flex justify-around gap-5">
+    <div>
+      <p class="footer_section_title">Pages</p>
+      <ul>
+        {
+          pages.map((page) => (
+            <li>
+              <a href={page.href}>{page.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div>
+      <p class="footer_section_title">Contact Us</p>
+      <p>Street, City, Country</p>
+      <p>email@email.com</p>
+      <p>+552-543-1259</p>
+    </div>
+    <div>
+      <p class="footer_section_title">Social Media</p>
+      <ul>
+        {
+          socials.map((social) => (
+            <li>
+              <a href={social.href}>{social.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div>
+      <p class="footer_section_title">Costumer Service</p>
+      <ul>
+        {
+          services.map((service) => (
+            <li>
+              <a href={service.href}>{service.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+  <div>
+    Made with ❤️ by <a
+      href="https://owaaquino.com"
+      target="_blank"
+      rel="noopener">Owa Aquino</a
+    >
+  </div>
 </footer>
+
+<style>
+  footer {
+    background: black;
+    color: #fff;
+    padding: 50px;
+  }
+
+  .footer_section_title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-decoration: underline;
+  }
+</style>
